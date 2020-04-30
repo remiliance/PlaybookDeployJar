@@ -1,0 +1,11 @@
+- name: Copy file JAR with owner and permissions
+  copy:
+    src: /home/user-ansible/ansible2.7.10/bin/microcommerce-0.0.1-SNAPSHOT.jar
+    dest: /etc/microcommerce-0.0.1-SNAPSHOT.jar
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+
+- name: Lancement du jar
+  become: yes
+  shell: java -jar /etc/microcommerce-0.0.1-SNAPSHOT.jar

@@ -1,0 +1,20 @@
+- name: Install Apache
+  become: yes
+  apt: name=apache2 state=latest
+
+- name: Start
+  become: yes
+  service: name=apache2 state=started enabled=true
+
+- name: Supprimer default.conf
+  become: yes
+  file: path=/etc/apache2/sites-enabled/default state=absent
+  notify: apache restart #permet d'appeler le handlers pr relaoder la conf apache
+
+- name: Creation du dossier
+  become: yes
+  file: path=/home/{{ user }}/{{ domain }} state=directory owner={{ user }}
+
+- name: Lien vers WWW
+  become: yes
+  file: src=/home/{{ user }}/{{ domain }} dest=/var/www/{{ domain }} state=link

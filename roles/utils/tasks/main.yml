@@ -1,0 +1,7 @@
+   - name: installation basics
+     apt:
+        name: "{{ item }}"
+        update_cache: yes
+     with_items:
+      - vim
+      - git

@@ -1,0 +1,4 @@
+ - name: Creation d'un utilisateur
+   user: name={{user}} comment="Mon nouvel utilisateur" shell=/usr/bin/bash
+ - name: Ajout
+   template: src=/home/user-ansible/ansible2.7.10/bin/template/sudoers.j2 dest=/etc/sudoers.d/{{ user }}-sudoer validate='visudo -cf %s'

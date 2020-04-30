@@ -1,0 +1,16 @@
+---
+- name: installation
+  hosts: http2
+  remote_user: ubuntu
+  become: yes
+  gather_facts: no
+  vars:
+    user: ubuntu
+    domain: local.dev
+
+  roles :
+    #- utils
+    #- user
+    #- apache
+    - importjar
+...
