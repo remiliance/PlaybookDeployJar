@@ -9,8 +9,8 @@
     domain: local.dev
 
   roles :
-    #- utils
-    #- user
+    - utils
+    - user
     #- apache
-    - importjar
+    #- importjar
 ...
