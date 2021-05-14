@@ -6,5 +6,5 @@
   tasks:
     - name: "allez"
       copy:
-       src: ./ansible.cfg
+       src: ./Jenkinsfile
        dest: /tmp/remi2.cfg
