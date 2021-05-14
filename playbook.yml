@@ -1,13 +1,10 @@
 ---
 - name: installation
-  hosts: all
+  hosts: kubmaster
+  remote_user: jenkins
   become: yes
-  gather_facts: no
-  vars:
-    user: remilou
-  roles :
-    #- utils
-    - user
-    #- apache
-    #- importjar
-...
+  tasks:
+    - name: "allez"
+      copy:
+       src: ./ansible.cfg
+       dest: /tmp/remi2.cfg
