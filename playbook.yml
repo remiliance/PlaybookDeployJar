@@ -6,8 +6,8 @@
   vars:
     user: remilou
   roles :
-    - utils
-    #- user
+    #- utils
+    - user
     #- apache
     #- importjar
 ...
