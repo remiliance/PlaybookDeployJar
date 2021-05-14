@@ -1,10 +1,13 @@
 ---
 - name: installation
   hosts: all
-  
+  become: yes
+  gather_facts: no
+  vars:
+    user: remilou
   roles :
     - utils
-    - user
+    #- user
     #- apache
     #- importjar
 ...
