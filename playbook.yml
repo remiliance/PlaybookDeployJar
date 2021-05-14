@@ -1,6 +1,6 @@
 ---
 - name: installation
-  hosts: kubmaster
+  hosts: all
   remote_user: jenkins
   become: yes
   tasks:
